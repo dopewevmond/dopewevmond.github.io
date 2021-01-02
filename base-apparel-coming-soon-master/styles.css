@@ -1,0 +1,114 @@
+:root {
+    --soft_red: hsl(0, 93%, 68%);
+    --desaturated_red: hsl(0, 36%, 70%);
+    --greyish_red: hsl(0, 6%, 24%);
+  }
+  .logo-mobile {
+    padding: 20px;
+  }
+  picture > img {
+    width: 100%;
+    height: auto;
+  }
+  #wrapper {
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .left-side {
+    background: linear-gradient(135deg, hsl(0, 0%, 100%),  hsl(0, 100%, 98%));
+  }
+  main {
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  main h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 0.5rem;
+    color: var(--desaturated_red);
+  }
+  #bold-heading {
+    font-weight: 600;
+    color: var(--greyish_red);
+  }
+  main p {
+    font-weight: 400;
+    color: var(--desaturated_red);
+  }
+  .email-input {
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: 55px;
+    grid-template-areas: 
+      "input input input input input input input input input input input input input button button"
+    ;
+  }
+  #email {
+    grid-area: input;
+    -webkit-appearance: none;
+    outline: none;
+    border: 1px solid var(--desaturated_red);
+    color: var(--greyish_red);
+    border-right: none;
+    border-radius: 50px 0 0 50px;
+    padding-left: 20px;
+    background: inherit;
+    transition: background 0.25s;
+  }
+  #email::placeholder {
+    color: var(--desaturated_red);
+  }
+  #email:focus {
+    background: hsl(0, 64%, 98%);
+  }
+  #submit-button {
+    outline: none;
+    -webkit-appearance: none;
+    grid-area: button;
+    height: 55px;
+    border: none;
+    border-radius: 50px;
+    background:linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    margin-left: -25px;
+    box-shadow: 10px 5px 10px 3px hsl(0, 70%, 91%);
+  }
+  #submit-button:hover {
+    background: hsl(0, 76%, 87%);
+  }
+  #error-message {
+    padding-top: 7px;
+    padding-left: 25px;
+    text-align: left;
+    color: var(--soft_red);
+    visibility: hidden;
+  }
+  #error-icon {
+    align-self: center;
+    position: absolute;
+    right: calc(20% + 12px);
+    visibility: hidden;
+  }
+
+  @media (min-width: 1440px) {
+    picture > img {
+      height: 100vh;
+    }
+    #wrapper {
+      width: 50%;
+      margin-top: 75px;
+    }
+    main {
+      text-align: left;
+    }
+    main h1 {
+      font-size: 4.5rem;
+    }
+    .left-side {
+      background-image: url('images/bg-pattern-desktop.svg');
+      background-size: cover;
+    }
+  }

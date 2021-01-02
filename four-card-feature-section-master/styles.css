@@ -1,0 +1,108 @@
+:root {
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --very-light-gray: hsl(0, 0%, 98%);
+}
+body, html {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    background-color: var(--very-light-gray);
+}
+.thin {
+    font-weight: 200;
+}
+#content {
+    margin: 0;
+    padding: 0;
+}
+h1, h3 {
+    color: var(--very-dark-blue);
+    font-weight: 600;
+}
+p {
+    color: var(--grayish-blue);
+    font-weight: 400;
+}
+header {
+    text-align: center;
+    padding: 0 15px;
+    margin: 50px 0 15px;
+}
+main {
+    width: 90%;
+    margin: 35px auto 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 35px;
+    gap: 30px;
+    grid-template-areas: 
+    "one one one"
+    "one one one"
+    "one one one"
+    "one one one"
+    "two two two"
+    "two two two"
+    "two two two"
+    "two two two"
+    "three three three"
+    "three three three"
+    "three three three"
+    "three three three"
+    "four four four"
+    "four four four"
+    "four four four"
+    "four four four";
+}
+main > * {
+    padding: 20px;
+}
+#one {
+    grid-area: one;
+    border-top: 5px solid hsl(180, 62%, 55%);
+}
+#two {
+    grid-area: two;
+    border-top: 5px solid hsl(0, 78%, 62%);
+}
+#three {
+    grid-area: three;
+    border-top: 5px solid hsl(34, 97%, 64%);
+}
+#four {
+    grid-area: four;
+    border-top: 5px solid hsl(212, 86%, 64%);
+}
+.card {
+    border: none;
+    border-radius: 6px;
+    box-shadow: 3px 5px 10px #e9e9e9;
+    background-color: #fff;
+}
+.card p {
+    height: 35px;
+}
+.card img {
+    position: relative;
+    top: 5%;
+    left: 80%;
+}
+
+@media (min-width: 1440px){
+    main {
+        width: 80%;
+        grid-template-areas: 
+        ". two ."
+        ". two ."
+        "one two four"
+        "one two four"
+        "one three four"
+        "one three four"
+        ". three ."
+        ".three .";
+    }
+    header p {
+        padding: 0 30%;
+    }
+}
