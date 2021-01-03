@@ -1,0 +1,91 @@
+main {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: hsl(0, 100%, 74%) ;
+    background-image: url('images/bg-intro-mobile.png');
+  }
+  form {
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 3px hsl(0, 64%, 65%);
+  }
+  #banner {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: hsl(248, 32%, 49%);
+    box-shadow: 0 10px 3px hsl(0, 64%, 65%);
+  }
+  .row-content {
+    min-height: 100vh;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+  .form-group {
+    position: relative;
+  }
+  .form-control{
+    height: 52px;
+    padding-left: 15px;
+    font-weight: 600;
+    border-width: 2px;
+  }
+  .error {
+    border-color: hsl(0, 100%, 74%);
+  }
+  .error::placeholder {
+    color: hsl(0, 100%, 74%);
+  }
+  /* add the error class to any invalid form field */
+  .error-icon {
+    position: absolute;
+    top: 14px;
+    right: 3%;
+    visibility: hidden;
+  }
+  .error-message {
+    text-align: right;
+    color: hsl(0, 100%, 74%);
+    font-style: italic;
+    font-weight: 500;
+    visibility: hidden;
+  }
+  #boldtext {
+    font-weight: 700;
+  }
+  button {
+    display: block;
+    width: 100%;
+    height: 52px;
+    outline: none;
+    border: 1px solid hsl(154, 59%, 51%);
+    margin: 0.5rem 0 1rem;
+    background-color: hsl(154, 59%, 51%);
+    border-radius: 10px;
+    font-weight: 600;
+    box-shadow: 0 2px 3px 1px hsl(154, 49%, 42%);
+    transition: background-color 0.25s;
+  }
+  button:hover {
+    background-color: hsl(154, 53%, 62%);
+  }
+  .form-message {
+    color: hsl(246, 25%, 77%);
+  }
+  .form-message a {
+    color: hsl(0, 100%, 74%);
+    font-weight: 600;
+  }
+
+  @media (min-width: 768px) {
+    form {
+    padding: 30px;
+    }
+  }
+  @media (min-width: 1440px) {
+    main {
+      background-image: url('images/bg-intro-desktop.png');
+    }
+  }
