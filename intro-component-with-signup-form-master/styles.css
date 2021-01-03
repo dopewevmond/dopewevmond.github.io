@@ -30,7 +30,8 @@ main {
     height: 52px;
     padding-left: 15px;
     font-weight: 600;
-    border-width: 2px;
+    border: 2px solid hsl(246, 25%, 77%);
+    color: hsl(249, 10%, 26%);
   }
   .error {
     border-color: hsl(0, 100%, 74%);
