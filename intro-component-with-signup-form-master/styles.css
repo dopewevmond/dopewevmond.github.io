@@ -66,6 +66,7 @@ main {
     background-color: hsl(154, 59%, 51%);
     border-radius: 10px;
     font-weight: 600;
+    cursor: pointer;
     box-shadow: 0 2px 3px 1px hsl(154, 49%, 42%);
     transition: background-color 0.25s;
   }

@@ -30,22 +30,22 @@
 
           <form id="signup-form" onsubmit="event.preventDefault(); validateForm();">
             <div class="form-group">
-              <input type="text" class="form-control" id="first-name" name="firstName" placeholder="First Name">
+              <input type="text" class="form-control" id="first-name" name="firstName" placeholder="First Name" onkeyup="resetFirst();">
               <small class="form-text error-message" id="fname-message">First Name cannot be empty</small>
               <img class="error-icon" id="fname-icon" src="images/icon-error.svg" aria-hidden="true">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" id="last-name" name="lastName" placeholder="Last Name">
+              <input type="text" class="form-control" id="last-name" name="lastName" placeholder="Last Name" onkeyup="resetLast();">
               <small class="form-text error-message" id="lname-message">Last Name cannot be empty</small>
               <img class="error-icon" id="lname-icon" src="images/icon-error.svg" aria-hidden="true">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" id="email" name="email" placeholder="Email Address">
+              <input type="text" class="form-control" id="email" name="email" placeholder="Email Address" onkeyup="resetEmail();">
               <small class="form-text error-message" id="email-message">Looks like this is not an email</small>
               <img class="error-icon" id="email-icon" src="images/icon-error.svg" aria-hidden="true">
             </div>
             <div class="form-group">
-              <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+              <input type="password" class="form-control" id="password" name="password" placeholder="Password" onkeyup="resetPassword();">
               <small class="form-text error-message" id="password-message">Password should be longer than 6 characters</small>
               <img class="error-icon" id="password-icon" src="images/icon-error.svg" aria-hidden="true">
             </div>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | [Challenge Name Here]</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="content">
+  <header>
+    <h1>Our Pricing</h1>
+  </header>
+  <main>
+    <div id="wrapper">
+      <p>Annually &nbsp;
+        <label id="switch" tabindex="0">
+          <input type="checkbox" id="toggle-price" checked/>
+          <span id="slider"></span>
+        </label>&nbsp;
+        Monthly</p>
+
+
+    <div id="cards">
+      <div id="basic" class="card">
+        <h3>Basic</h3>
+        <div class="price">
+          <p>
+          <span class="month"><small>&dollar;</small>19.99</span>
+          <span class="year"><small>&dollar;</small>199.99</span>
+          </p>
+          
+        </div>
+        <div>
+          <p><hr>
+            500 GB Storage<hr>
+        2 Users Allowed<hr>
+        Send up to 3 GB<hr>
+          </p>
+          <button>
+          LEARN MORE          
+        </button>
+        </div>
+      </div>
+
+      <div id="pro" class="card">
+        <h3>Professional</h3>
+        <div class="price">
+          <span class="month"><small>&dollar;</small>24.99</span>
+          <span class="year"><small>&dollar;</small>249.99</span>
+        </div>
+        <div>
+          <p><hr>
+            1 TB Storage<hr>
+        5 Users Allowed<hr>
+        Send up to 10 GB<hr>
+          </p>
+          <button>
+            LEARN MORE          
+          </button>
+        </div>
+      </div>
+
+      <div id="master" class="card">
+        <h3>Master</h3>
+        <div class="price">
+          <span class="month"><small>&dollar;</small>39.99</span>
+          <span class="year"><small>&dollar;</small>399.99</span>
+        </div>
+        <div>
+          <p><hr>
+            2 TB Storage<hr>
+        10 Users Allowed<hr>
+        Send up to 20 GB<hr>
+          </p>
+          <button>
+            LEARN MORE          
+          </button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+  </div>
+  <script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    document.getElementById("toggle-price").addEventListener("change", function(event){
+
+      const isMonthly = event.currentTarget.checked;
+      const years = document.getElementsByClassName("year");
+      const months = document.getElementsByClassName("month");
+      
+      if(isMonthly){
+        for (month of months) {
+          month.style.display = 'block';
+        }
+        for (year of years) {
+          year.style.display = 'none';
+        }
+      }
+      else{
+        for (month of months) {
+          month.style.display = 'none';
+        }
+        for (year of years) {
+          year.style.display = 'block';
+        }
+      }
+    });
+});
+</script>
+</body>
+
+</html>

@@ -10,6 +10,11 @@ function showErrorMessage(lst) {
     document.getElementById(lst[2]).style.visibility = 'hidden';
   };
 
+  var f_name_params = ["first-name", "fname-message", "fname-icon"];
+  var l_name_params = ["last-name", "lname-message", "lname-icon"];
+  var email_params = ["email", "email-message", "email-icon"];
+  var password_params = ["password", "password-message", "password-icon"];
+
   function validateForm(event) {
     form = document.getElementById("signup-form");
     var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -18,10 +23,7 @@ function showErrorMessage(lst) {
     var email = form.email.value;
     var password = form.password.value;
 
-    f_name_params = ["first-name", "fname-message", "fname-icon"];
-    l_name_params = ["last-name", "lname-message", "lname-icon"];
-    email_params = ["email", "email-message", "email-icon"];
-    password_params = ["password", "password-message", "password-icon"];
+    
 
     if (firstName.trim().length < 1) {
       showErrorMessage(f_name_params);
@@ -47,3 +49,16 @@ function showErrorMessage(lst) {
       resetInputField(password_params);
     }
   };
+
+  function resetFirst() {
+    resetInputField(f_name_params);
+  }
+  function resetLast() {
+    resetInputField(l_name_params);
+  }
+  function resetEmail() {
+    resetInputField(email_params);
+  }
+  function resetPassword() {
+    resetInputField(password_params);
+  }
