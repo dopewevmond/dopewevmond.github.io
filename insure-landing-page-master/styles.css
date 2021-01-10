@@ -35,6 +35,11 @@ h1, h2, h3, h4, h5 {
     margin: 15px;
     margin-right: 0;
     padding: 1rem;
+    width: 150px;
+    height: auto;
+}
+#navbrand-link {
+    width: 180px;
 }
 .navbar-links {
     list-style-type: none;
