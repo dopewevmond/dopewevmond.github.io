@@ -207,6 +207,7 @@ button {
     flex-direction: row;
     justify-content: space-between;
     align-content: center;
+    margin: 10px auto;
     }
     #navbarbrand {
     margin-top: 20px;
