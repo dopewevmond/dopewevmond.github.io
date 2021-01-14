@@ -95,7 +95,7 @@ footer ul {
     list-style-type: none;
     padding: 0;
 }
-footer li {
+.quick-links li {
     margin-bottom: 1rem;
 }
 footer  a {
@@ -133,13 +133,21 @@ footer a:hover {
     visibility: hidden;
 }
 #icons {
-    font-size: 25px;
+    font-size: 20px;
 }
-#icons li{
-    display: inline;
+#icons li {
+    float: left;
+}
+#icons i {
+    width: 40px;
+    height: 40px;
+    border: 1px solid hsl(176, 68%, 64%);
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 20%;
 }
 #icons li:not(:last-child) {
-    margin-right: 1.5rem;
+    margin-right: 10px;
 }
 .myicon:hover {
     color: hsl(176, 68%, 64%);
