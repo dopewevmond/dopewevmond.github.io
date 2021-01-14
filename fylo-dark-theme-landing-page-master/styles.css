@@ -1,0 +1,172 @@
+body {background: hsl(218, 28%, 13%); color: white; min-height: 100vh; font-size: 14px;}
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+}
+#navbrand img {width: 100px; height: auto;}
+#navlinks {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+#navlinks li {
+    line-height: 1.4rem;
+}
+#navlinks li:not(:last-child) {
+    margin-right: 1rem;
+}
+#navlinks li a {
+    color: white;
+    transition: 0.25s;
+}
+#navlinks li a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+#landing-section > img {
+    width: 100%;
+    height: auto;
+}
+#landing-section h1 {
+    font-size: 28px;
+}
+#landing-section button {
+    outline: none;
+    border: none;
+    background: linear-gradient(135deg, hsl(176, 68%, 64%), hsl(198, 60%, 50%)) ;
+    color: white;
+    font-weight: bold;
+    padding: 1rem 4rem;
+    border-radius: 25px;
+}
+#landing-section button:hover {
+    background: hsl(176, 68%, 64%);
+}
+.features-section > div {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.features-section > div > h3 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.features-section > div > p {
+    margin: 0;
+}
+#productive-section button {
+    background: transparent;
+    outline: 0;
+    border: none;
+    border-bottom: 1px solid hsl(176, 68%, 64%);
+    color: hsl(176, 68%, 64%);
+    padding: 5px 0;
+}
+#productive-section button:hover {
+    color: white;
+    border-color: white;
+}
+#testimonies {
+    background-image: url('images/bg-quotes.png');
+    background-repeat: no-repeat;
+    background-position: top left;
+    margin-top: 50px;
+}
+.testimony-card {
+    background: hsl(219, 30%, 18%);
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px 3px hsl(217, 30%, 12%);
+}
+.small-image {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+.small-image-owner {
+    line-height: 1.25rem;
+}
+footer {
+    background-color: hsl(216, 53%, 9%);
+    padding: 200px 0 50px;
+    /* margin-top: 250px; */
+}
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+footer li {
+    margin-bottom: 1rem;
+}
+footer  a {
+    color: white;
+}
+footer a:hover {
+    color: white;
+}
+#form-section {
+    background: hsl(217, 28%, 15%);
+    position: relative;
+    top: 150px;
+    min-height: 300px;
+    box-shadow: 5px 0 20px 3px hsl(217, 30%, 12%);
+    border-radius: 10px;
+}
+#form-section input {
+    height: 50px;
+    border-radius: 25px;
+    padding-left: 25px;
+}
+#form-section button {
+    min-height: 50px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, hsl(176, 68%, 64%), hsl(198, 60%, 50%));
+    transition: none;
+}
+#form-section button:hover {
+    background: hsl(176, 68%, 64%);
+    border: none;
+}
+#error {
+    color: hsl(0, 100%, 63%);
+    visibility: hidden;
+}
+#icons {
+    font-size: 25px;
+}
+#icons li{
+    display: inline;
+}
+#icons li:not(:last-child) {
+    margin-right: 1.5rem;
+}
+.myicon:hover {
+    color: hsl(176, 68%, 64%);
+}
+button {
+    cursor: pointer;
+}
+
+
+
+@media(min-width: 768px) {
+    #navlinks li:not(:last-child) {
+    margin-right: 1rem;
+    }
+    #landing-section h1 {
+    font-size: 2.5rem;
+    }
+    #landing-section p {
+    font-size: 20px;
+    }
+}
+
+@media(min-width: 1440px) {
+    #navlinks li:not(:last-child) {
+    margin-right: 2rem;
+    }
+    #productive-section {
+    height: 450px;
+    }
+}
