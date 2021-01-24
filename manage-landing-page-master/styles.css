@@ -18,6 +18,11 @@ body {
     font-size: 16px;
     font-family: 'Be Vietnam', sans-serif;
     color: var(--dark_blue);
+    background-image: url('images/bg-tablet-pattern.svg');
+    background-repeat: no-repeat;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-size: 120%;
 }
 .no-margin {
     margin: 0;
@@ -102,6 +107,18 @@ nav {
 #features-section {
     display: flex;
     flex-direction: column;
+}
+dt h3 {
+    background-color: var(--very_pale_red);
+    padding: 0.4rem 0;
+    line-height: 1.8rem;
+    margin-right: -5%;
+}
+dt h3 span.orange-badge {
+    background-color: var(--bright_red);
+    padding: 0.4rem 1rem;
+    color: white;
+    border-radius: 25px;
 }
 dd {
     margin-left: 0;
@@ -354,6 +371,16 @@ footer ul {
     #footer-four {
         margin-top: 30px;
     }
+    dt h3 {
+        background-color: transparent;
+    }
+    body {
+        background-image: initial;
+        background-image: url('images/bg-tablet-pattern.svg');
+        background-size: 70%;
+        background-position-x: 350px;
+        background-position-y: -50px;
+    }
 }
 
 
@@ -400,6 +427,13 @@ footer ul {
     #footer-four {
         margin-top: 0;
     }
+    dt h3 span.orange-badge {
+        margin-right: 0.5rem;
+    }
+    dd {
+        margin-left: 4.5rem;
+        margin-bottom: 50px;
+    }
 }
 
 @media (min-width: 1440px) {
@@ -414,5 +448,12 @@ footer ul {
     }
     .carousel-wrapper {
         width: 70%;
+    }
+    body {
+        background-image: initial;
+        background-image: url('images/bg-tablet-pattern.svg');
+        background-size: 40%;
+        background-position-x: 90%;
+        background-position-y: -10%;
     }
 }
