@@ -20,8 +20,7 @@ body {
     color: var(--dark_blue);
     background-image: url('images/bg-tablet-pattern.svg');
     background-repeat: no-repeat;
-    background-position-x: 50px;
-    background-position-y: -15px;
+    background-position: 50px -15px;
     background-size: 120%;
 }
 .no-margin {
@@ -390,8 +389,7 @@ footer ul {
         background-image: initial;
         background-image: url('images/bg-tablet-pattern.svg');
         background-size: 70%;
-        background-position-x: 350px;
-        background-position-y: -50px;
+        background-position: 350px -50px;
     }
 }
 
@@ -468,7 +466,6 @@ footer ul {
         background-image: initial;
         background-image: url('images/bg-tablet-pattern.svg');
         background-size: 40%;
-        background-position-x: 90%;
-        background-position-y: -10%;
+        background-position: 90% -10%;
     }
 }

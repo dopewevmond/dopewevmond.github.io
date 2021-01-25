@@ -14,16 +14,16 @@
 </head>
 <body>
   <div class="container-fluid">
-    <div class="row d-md-none">
+    <div class="row d-lg-none">
       <div class="col-12">
         <img src="images/logo.svg" alt="logo" class="logo-mobile">
       </div>
     </div>
 
     <div class="row">
-      <div class="col-12 col-md-7 p-0 order-last order-md-first left-side">
+      <div class="col-12 col-lg-7 p-0 order-last order-lg-first left-side">
         <div id="wrapper">
-          <img src="images/logo.svg" alt="logo desktop" class="d-none d-md-block mb-5">
+          <img src="images/logo.svg" alt="logo desktop" class="d-none d-lg-block mb-5">
 
           <main>
             <h1> WE'RE<br> <span id="bold-heading"> COMING<br> SOON</span> </h1>
@@ -43,37 +43,14 @@
       </div>
       <!-- end of column -->
 
-      <div class="col-12 col-md-5 p-0">
+      <div class="col-12 col-lg-5 p-0">
         <picture>
-          <source media="(min-width: 1440px)" srcset="images/hero-desktop.jpg">
+          <source media="(min-width: 1024px)" srcset="images/hero-desktop.jpg">
           <img src="images/hero-mobile.jpg" alt="woman">
         </picture>
       </div>
     </div>
   </div>
-
-  <script>
-    var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    function validateForm() {
-      var email = document.getElementById('email');
-      if(!email.value.match(mailformat)){
-        var message = document.getElementById('error-message');
-        var icon = document.getElementById('error-icon');
-        message.style.visibility = 'visible';
-        icon.style.visibility = 'visible';
-        email.style.borderColor = 'hsl(0, 93%, 68%)';
-      }
-    };
-    function validateOnKeyDown() {
-      var email = document.getElementById('email');
-      if(email.value.match(mailformat)){
-        var message = document.getElementById('error-message');
-        var icon = document.getElementById('error-icon');
-        message.style.visibility = 'hidden';
-        icon.style.visibility = 'hidden';
-        email.style.borderColor = 'rgb(182, 182, 182)';
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

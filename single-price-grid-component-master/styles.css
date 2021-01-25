@@ -1,0 +1,93 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    background: hsl(204, 43%, 93%);
+    font-family: 'Karla', sans-serif;
+  }
+  main {
+    align-self: center;
+    justify-self: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .cs-bold {
+    font-weight: 600;
+  }
+  .cs-shadow {
+    border-radius: 10px;
+    box-shadow: 3px 3px 20px 5px rgba(240, 240, 240, 0.377);
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  .cs-round-top {
+    border-radius: 10px 10px 0 0;
+  }
+  .cs-round-bottom {
+    border-radius: 0 0 10px 10px;
+  }
+  
+  .cs-text-grayish-blue {
+    color: hsl(218, 22%, 67%);
+  }
+  .cs-text-cyan {
+    color: hsl(179, 62%, 43%);
+  }
+  .cs-text-yellow {
+    color: hsl(71, 73%, 54%);
+  }
+  .text-shadow {
+    text-shadow: 1px 1px 5px hsl(219, 100%, 97%);
+  }
+  .cs-bg-cyan {
+    background: hsl(179, 62%, 43%);
+  }
+  .cs-bg-cyan-light {
+    background: hsl(179, 48%, 52%);
+  }
+  .cs-large-text {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  li a {
+    color: white;
+  }
+  li a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+  button {
+    outline: none;
+    border: none;
+    font-weight: bold;
+    color: white;
+    background: hsl(71, 73%, 54%);
+    border-radius: 10px;
+    padding: 15px;
+    display: block;
+    width: 100%;
+    box-shadow: 1px 1px 5px 1px hsla(179, 52%, 52%, 0.596);
+    cursor: pointer;
+  }
+  button:hover {
+    background: hsl(71, 63%, 54%);
+  }
+
+  @media (min-width: 768px) {
+    .cs-round-bottom-left {
+      border-radius: 0 0 0 10px;
+    }
+    .cs-round-bottom-right {
+      border-radius: 0 0 10px 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    main {
+      width: 40%;
+      min-width: 760px;
+    }
+  }
