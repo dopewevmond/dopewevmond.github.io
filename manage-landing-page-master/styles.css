@@ -42,30 +42,36 @@ nav {
     flex-direction: column;
     position: relative;
 }
-.nav-links {
-    padding: 20px 0 10px;
-    margin: 0 auto;
+.navbar-links {
+    padding: 20px 100px 10px;
+    margin: 30px auto 0;
     list-style-type: none;
     display: none;
+    background-color: white;
+    box-shadow: 3px 3px 50px 3px rgb(248, 229, 214);
 }
-.nav-links li {
+.navbar-links li {
     padding: 10px;
     text-align: center;
 }
-.nav-links li a {
+.navbar-links li a {
     text-decoration: none;
     font-weight: 700;
     display: block;
     color: var(--dark_blue);
 }
-.nav-links li a:hover {
+.navbar-links li a:hover {
     text-decoration: underline;
 }
-.navbar-toggler {
+.navtoggler {
     position: absolute;
-    top: 22px;
-    right: 5px;
+    top: 2px;
+    right: 2px;
     color: var(--dark_blue);
+    padding: 20px;
+}
+.show-navbar {
+    display: block;
 }
 .btn-big {
      border: none;
@@ -113,6 +119,7 @@ dt h3 {
     padding: 0.4rem 0;
     line-height: 1.8rem;
     margin-right: -5%;
+    font-size: 14px;
 }
 dt h3 span.orange-badge {
     background-color: var(--bright_red);
@@ -300,11 +307,16 @@ footer ul {
 }
 #input-box {
     grid-area: inputbox;
+    -webkit-appearance: none;
     padding: 15px 20px;
     outline: none;
     border: 2px solid var(--very_light_gray);
     border-radius: 25px;
     height: 50px;
+    transition: .25s;
+}
+#input-box:focus {
+    background-color: #f1f1f1;
 }
 #submit-button {
     grid-area: submitbutton;
@@ -391,18 +403,21 @@ footer ul {
     nav {
         padding: 50px 0;
     }
-    .navbar-toggler {
+    .navtoggler {
         display: none;
     }
     #main-navbar {
         flex-direction: row;
         justify-content: space-around;
     }
-    .nav-links {
+    .navbar-links {
         display: flex;
         padding: 0;
+        box-shadow: none;
+        background-color: transparent;
+        margin: 0 auto;
     }
-    .nav-links li {
+    .navbar-links li {
         padding: 10px 1.25rem 10px 0;
     }
     .brand {
@@ -440,7 +455,7 @@ footer ul {
     .wrapper {
         width: 70%;
     }
-    .nav-links li {
+    .navbar-links li {
         padding: 10px 1.5rem 10px 0;
     }
     .padding-right {

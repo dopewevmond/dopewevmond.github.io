@@ -194,7 +194,7 @@ footer li {
     background-position: top right;
     margin: 100px auto;
 }
-button {
+button, #icons-list li {
     cursor: pointer;
 }
 

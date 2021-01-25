@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">  
   <title>Frontend Mentor | Manage landing page</title>
 
@@ -19,9 +19,9 @@
         <a href="#"><img src="images/logo.svg" alt="logo"></a>
       </div>
 
-      <span class="navbar-toggler"><i class="fa fa-bars"></i></span>
+      <span class="navtoggler"><i class="fa fa-bars"></i></span>
 
-      <ul class="nav-links">
+      <ul class="navbar-links">
         <li><a href="#">Pricing</a></li>
         <li><a href="#">Product</a></li>
         <li><a href="#">About Us</a></li>
@@ -54,19 +54,19 @@
         </div>
         <div id="features-second">
           <dl>
-            <dt><h3><span class="orange-badge">01</span> 
+            <dt><h3><span class="orange-badge">01</span> &nbsp;
   Track company-wide progress</h3></dt>
             <dd><p>See how your day-to-day tasks fit into the wider vision. Go from 
   tracking progress at the milestone level all the way done to the 
   smallest of details. Never lose sight of the bigger picture again.</p></dd>
 
-            <dt><h3><span class="orange-badge">02</span>
+            <dt><h3><span class="orange-badge">02</span> &nbsp;
   Advanced built-in reports</h3></dt>
             <dd><p>Set internal delivery estimates and track progress toward company 
   goals. Our customisable dashboard helps you build out the reports 
   you need to keep key stakeholders informed.</p></dd>
 
-            <dt><h3><span class="orange-badge">03</span>
+            <dt><h3><span class="orange-badge">03</span> &nbsp;
   Everything you need in one place</h3></dt>
             <dd><p>Stop jumping from one service to another to communicate, store files, 
   track tasks and share documents. Manage offers an all-in-one team 
@@ -115,7 +115,7 @@
 
             <div class="carousel__photo no-display">
               <img src="images/avatar-richard.png" alt="richard">
-              <p>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo adipisci aut ab dolore dolorem placeat et. Omnis possimus repudiandae molestiae atque, iusto optio suscipit nobis minus. Autem aperiam rem delectus.”
+              <p>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo adipisci aut ab dolore dolorem placeat et. Omnis possimus repudiandae molestiae atque.”
               </p>
             </div>
 
@@ -182,5 +182,31 @@
     </div>
   </footer>
   </div>
+<script>
+  let toggler_icon = document.getElementsByClassName("navtoggler")[0];
+  let navbar = document.getElementsByClassName("navbar-links")[0];
+
+  toggler_icon.addEventListener("click", function(){
+    navbar.classList.toggle("show-navbar");
+    if (document.getElementsByClassName("fa-bars")[0]) {
+      document.getElementsByClassName("fa-bars")[0].className = "fa fa-times";
+    } else {
+      document.getElementsByClassName("fa-times")[0].className = "fa fa-bars";
+    }
+  });
+  document.addEventListener("click", function(event){
+    var clickedInsideNavbar = navbar.contains(event.target);
+    var clickedOnToggler = toggler_icon.contains(event.target);
+
+    // console.log("Clicked inside the navbar: ",clickedInsideNavbar);
+    // console.log("clicked on nav toggler: ", clickedOnToggler);
+    // console.log("Contains show navbar: ", navbar.classList.contains("show-navbar"));
+
+    if (!clickedOnToggler && !clickedInsideNavbar && navbar.classList.contains("show-navbar")) {
+      navbar.classList.remove("show-navbar");
+      document.getElementsByClassName("fa-times")[0].className = "fa fa-bars";
+    }
+  });
+</script>
 </body>
 </html>
