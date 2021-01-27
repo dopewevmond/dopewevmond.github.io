@@ -2,7 +2,7 @@ body {background: hsl(218, 28%, 13%); color: white; min-height: 100vh; font-size
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 30px 0;
+    padding: 50px 0;
 }
 #navbrand img {width: 100px; height: auto;}
 #navlinks {
@@ -23,7 +23,7 @@ nav {
 }
 #navlinks li a:hover {
     text-decoration: underline;
-    font-weight: bold;
+    
 }
 #landing-section > img {
     width: 100%;

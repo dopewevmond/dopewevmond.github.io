@@ -29,7 +29,10 @@ body {
   .cs-round-bottom {
     border-radius: 0 0 10px 10px;
   }
-  
+  .go-up {
+    display: inline-block;
+    transform: translate(0.5rem, -0.5rem);
+  }
   .cs-text-grayish-blue {
     color: hsl(218, 22%, 67%);
   }

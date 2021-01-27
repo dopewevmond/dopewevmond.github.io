@@ -4,147 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png">
   
   <title>Frontend Mentor | Huddle landing page with single introductory section</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.14.0/css/all.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-  
-  <style>
-    body, html{
-      padding: 0;
-      margin: 0;
-    }
-    #content {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      color: white;
-      background-color: hsl(257, 40%, 49%);
-      background-image: url('images/bg-mobile.svg');
-      background-repeat: no-repeat;
-      font-family: 'Poppins', sans-serif;
-    }
-    #container {
-      width: 90%;
-      margin: 0 auto;
-      padding-top: 20px;
-    }
-    header {
-      margin-bottom: 30px;
-    }
-    main {
-        padding-bottom: 50px;
-        display: grid;
-        grid-template-columns: 3fr 2fr;
-        grid-auto-rows: minmax(10px, auto);
-        gap: 25px;
-        grid-template-areas: 
-        "image image"
-        "description description"
-        "social social"
-        ;
-      }
-      #landing-image {
-        grid-area: image;
-      }
-      
-      #description {
-        grid-area: description;
-        text-align: center;
-      }
-      #description p {
-        line-height: 2rem;
-      }
-      #landing-image img {
-        width: 100%;
-        height: auto;
-      }
-      #description h1 {
-        font-size: 2.5rem;
-        margin-top: 0;
-      }
-      #description button {
-        outline: none;
-        border: none;
-        border-radius: 25px;
-        background: white;
-        color: hsl(257, 40%, 49%);
-        font-weight: bold;
-        padding: 15px 65px;
-        margin-top: 10px;
-        cursor: pointer;
-        transition: background 0.25s, color 0.25s;
-        box-shadow: 5px 5px 5px rgb(76, 84, 158);
-      }
-      #description button:hover {
-        background: hsl(300, 69%, 71%);
-        color: white;
-      }
-      #social-media a {
-        color: inherit;
-      }
-      #social-media {
-        grid-area: social;
-        justify-self: center;
-        display: grid;
-        grid-template-columns: 3rem 3rem 3rem;
-        grid-auto-rows: 3rem;
-        gap: 1rem;
-        grid-template-areas: 
-        "facebook twitter instagram"
-        ;
-      }
-      #face {
-        grid-area: facebook;
-      }
-      #twitt {
-        grid-area: twitter;
-      }
-      #insta {
-        grid-area: instagram;
-      }
-      .icon-circle {
-        width: 3rem;
-        height: 3rem;
-        border: 1px solid white;
-        background: transparent;
-        border-radius: 1.5rem;
-        display: grid;
-        align-items: center;
-        justify-items: center;
-        cursor: pointer;
-        transition: color 0.25s;
-      }
-      .icon-circle:hover {
-        color: hsl(300, 69%, 71%);
-      }
-    @media (min-width: 1440px) {
-      #content {
-        background-image: url('images/bg-desktop.svg');
-        background-size: cover;
-      }
-      #container {
-        width: 80%;
-      }
-      main {
-        grid-template-areas: "image description"
-        ". social"
-        ;
-      }
-      #description {
-        padding: 70px 20px 20px;
-        text-align: left;
-      }
-      #social-media {
-        justify-self: end;
-        padding: 0 20px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div id="content">
