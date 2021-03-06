@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React App</title>
+    <link rel="shortcut icon" href="small_chuck.png" type="image/x-icon">
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+    <style>
+        #root{
+            font-family: 'Source Code Pro', monospace;
+        }
+    </style>
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js" integrity="sha512-pBSlhNUvB+td6sjW1zmR6L7c7kVWR4octUPl4tfHmzO63424nxta8aLmficEcAAswQmRqTiToi63AazDurj/Sg==" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="root">
+    </div>
+
+    <script type="text/babel">
+        function RenderJokes({joke, isLoadingJoke, errMess}) {
+            if (isLoadingJoke) {
+                return (
+                    <Loading />
+                );
+            } else if (errMess) {
+                return (
+                    <div className="alert alert-danger py-4">
+                        {errMess}
+                    </div>
+                );
+            }
+            else if (joke.value && joke.icon)  {
+                return (
+                    <blockquote className="blockquote">
+                        <div className="media">
+                            <img src={joke.icon} alt="chuck norris" className="mr-2" />
+                            <div className="media-body">
+                                <p className="mb-0 text-left">{joke.value}</p>
+                                <footer className="blockquote-footer">
+                                    Chuck Norris from the 
+                                    <a href="https://api.chucknorris.io/" target="_blank">
+                                        <cite> ChuckNorris.io API</cite>
+                                    </a>
+                                </footer>
+                            </div>
+                        </div>
+                    </blockquote>
+                );
+            } else {
+                return (
+                    <div></div>
+                );
+            }
+        }
+
+        function Loading() {
+            return (
+                <span className="fa fa-spinner fa-pulse fa-fw text-primary fa-2x"></span>
+            );
+        }
+
+        class Main extends React.Component {
+            constructor(props) {
+                super(props);
+
+                this.state = {
+                    isLoadingJoke : false,
+                    errMess: null,
+                    joke: {}
+                }
+                this.getRandomJoke = this.getRandomJoke.bind(this);
+            }
+
+            getRandomJokePromise(url) {
+                return new Promise((resolve, reject) => {
+                    const request = new XMLHttpRequest();
+
+                    this.setState({isLoadingJoke: true});
+
+                    request.addEventListener('readystatechange', () => {
+                        if (request.readyState === 4 && request.status === 200) {
+                            const data = JSON.parse(request.responseText);
+                            resolve(data);
+                        } else if (request.readyState === 4) {
+                            console.log('failed');
+                            reject('error getting resource');
+                        }
+                    });
+
+                    request.open('GET', url);
+                    request.send();
+                });
+            }
+
+            getRandomJoke(url) {
+                this.getRandomJokePromise(url).then( data => {
+                    this.setState({isLoadingJoke: false});
+                    // console.log('Promise resolved', data);
+
+                    const {icon_url: icon, value} = data;
+
+                    this.setState({
+                        joke: {
+                            icon,
+                            value
+                        }
+                    });
+
+                }).catch( data => {
+                    this.setState({errMess: "An error occured while trying to load the joke. Please try again", isLoadingJoke: false});
+                    // console.log('Promise rejected.', data);
+                })
+            }
+
+            render(){
+                return(
+                    <React.Fragment>
+                        <div className="col-12 py-3">
+                            <h1>Chuck Norris Joke Generator</h1>
+                            <p>Click on the button below to generate a random joke</p>
+                        </div>
+
+                        <div className="col-12 mb-1">
+                            <button onClick={() => this.getRandomJoke('https://api.chucknorris.io/jokes/random')} className="btn btn-primary btn-lg">
+                                Generate Joke
+                            </button>
+                        </div>
+
+                        <div className="col-12 py-2">
+                            <hr />
+                        </div>
+                        
+
+                        <div className="col-12 offset-md-3 col-md-6">
+                            <RenderJokes joke={this.state.joke} isLoadingJoke={this.state.isLoadingJoke} errMess={this.state.errMess} />
+                        </div>
+                        
+                    </React.Fragment>
+                );
+            }
+        }
+
+        const ContainerComponent = () =>  (
+            <div className="container text-center">
+                <div className="row">
+                    <div className="col-12">
+                        <img src="./chuck.png" alt="chuck norris" width="250" />
+                    </div>
+                </div>
+                <div className="row">
+                    <Main />
+                </div>
+            </div>      
+        );
+        ReactDOM.render(<ContainerComponent />, document.getElementById('root'));
+    </script>
+</body>
+</html>
