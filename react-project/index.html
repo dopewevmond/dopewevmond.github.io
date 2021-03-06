@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>React App</title>
+    <title>Chuck Norris Jokes</title>
     <link rel="shortcut icon" href="small_chuck.png" type="image/x-icon">
 
 
@@ -32,10 +32,14 @@
 </head>
 <body>
     <div id="root">
+        <!-- <main style="text-align: center;">
+            <h1 style="padding: 50px 0">Chuck Norris Joke Generator</h1>
+            <img src="./chuck.png" alt="chuck norris" style="display: block; margin: 0 auto; width: 90%; max-width: 500px;">
+        </main> -->
     </div>
 
     <script type="text/babel">
-        function RenderJokes({joke, isLoadingJoke, errMess}) {
+        const RenderJokes = ({joke, isLoadingJoke, errMess}) => {
             if (isLoadingJoke) {
                 return (
                     <Loading />
@@ -55,7 +59,7 @@
                             <div className="media-body">
                                 <p className="mb-0 text-left">{joke.value}</p>
                                 <footer className="blockquote-footer">
-                                    Chuck Norris from the 
+                                    from the 
                                     <a href="https://api.chucknorris.io/" target="_blank">
                                         <cite> ChuckNorris.io API</cite>
                                     </a>
@@ -71,7 +75,7 @@
             }
         }
 
-        function Loading() {
+        const Loading = () => {
             return (
                 <span className="fa fa-spinner fa-pulse fa-fw text-primary fa-2x"></span>
             );
@@ -126,7 +130,7 @@
                     });
 
                 }).catch( data => {
-                    this.setState({errMess: "An error occured while trying to load the joke. Please try again", isLoadingJoke: false, joke: {}});
+                    this.setState({errMess: "An error occured while trying to load the joke. Please check your internet connection and try again", isLoadingJoke: false, joke: {}});
                     // console.log('Promise rejected.', data);
                 })
             }
