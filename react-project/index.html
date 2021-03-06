@@ -17,6 +17,9 @@
         #root{
             font-family: 'Source Code Pro', monospace;
         }
+        h1 {
+            font-size: 2rem;
+        }
     </style>
 
     
@@ -90,7 +93,7 @@
                 return new Promise((resolve, reject) => {
                     const request = new XMLHttpRequest();
 
-                    this.setState({isLoadingJoke: true});
+                    this.setState({isLoadingJoke: true, joke: {}, errMess: null});
 
                     request.addEventListener('readystatechange', () => {
                         if (request.readyState === 4 && request.status === 200) {
@@ -109,7 +112,6 @@
 
             getRandomJoke(url) {
                 this.getRandomJokePromise(url).then( data => {
-                    this.setState({isLoadingJoke: false});
                     // console.log('Promise resolved', data);
 
                     const {icon_url: icon, value} = data;
@@ -118,11 +120,13 @@
                         joke: {
                             icon,
                             value
-                        }
+                        },
+                        errMess: null,
+                        isLoadingJoke: false
                     });
 
                 }).catch( data => {
-                    this.setState({errMess: "An error occured while trying to load the joke. Please try again", isLoadingJoke: false});
+                    this.setState({errMess: "An error occured while trying to load the joke. Please try again", isLoadingJoke: false, joke: {}});
                     // console.log('Promise rejected.', data);
                 })
             }
@@ -132,7 +136,6 @@
                     <React.Fragment>
                         <div className="col-12 py-3">
                             <h1>Chuck Norris Joke Generator</h1>
-                            <p>Click on the button below to generate a random joke</p>
                         </div>
 
                         <div className="col-12 mb-1">
@@ -159,7 +162,7 @@
             <div className="container text-center">
                 <div className="row">
                     <div className="col-12 mt-2">
-                        <img src="./chuck.png" alt="chuck norris" width="100" />
+                        <img src="./chuck.png" alt="chuck norris" width="50" />
                     </div>
                 </div>
                 <div className="row">
