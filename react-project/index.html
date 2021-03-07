@@ -20,6 +20,9 @@
         h1 {
             font-size: 2rem;
         }
+        .pointer {
+            cursor: pointer;
+        }
     </style>
 
     
@@ -32,10 +35,6 @@
 </head>
 <body>
     <div id="root">
-        <!-- <main style="text-align: center;">
-            <h1 style="padding: 50px 0">Chuck Norris Joke Generator</h1>
-            <img src="./chuck.png" alt="chuck norris" style="display: block; margin: 0 auto; width: 90%; max-width: 500px;">
-        </main> -->
     </div>
 
     <script type="text/babel">
@@ -51,13 +50,13 @@
                     </div>
                 );
             }
-            else if (joke.value && joke.icon)  {
+            else if (joke && joke !== null)  {
                 return (
                     <blockquote className="blockquote">
                         <div className="media">
-                            <img src={joke.icon} alt="chuck norris" className="mr-2" />
+                            <img src="./small_chuck.png" alt="chuck norris" className="mr-2" />
                             <div className="media-body">
-                                <p className="mb-0 text-left">{joke.value}</p>
+                                <p className="mb-0 text-left">{joke}</p>
                                 <footer className="blockquote-footer">
                                     from the 
                                     <a href="https://api.chucknorris.io/" target="_blank">
@@ -67,6 +66,32 @@
                             </div>
                         </div>
                     </blockquote>
+                );
+            } else {
+                return (
+                    <div></div>
+                );
+            }
+        }
+
+        const RenderCategories = ({categories_array, getJoke}) => {
+            if (categories_array) {
+                const categories = categories_array.map( (category, idx) => {
+                    return (
+                        <a className="dropdown-item pointer" key={idx} onClick={() => getJoke(category)}>
+                            {category}
+                        </a>
+                    );
+                });
+                return (
+                    <div className="dropdown mb-2">
+                        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Select Joke Category
+                        </button>
+                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            {categories}
+                        </div>
+                    </div>
                 );
             } else {
                 return (
@@ -88,24 +113,29 @@
                 this.state = {
                     isLoadingJoke : false,
                     errMess: null,
-                    joke: {}
+                    joke: null,
+                    categories: null
                 }
                 this.getRandomJoke = this.getRandomJoke.bind(this);
+                this.getJokeByCategory = this.getJokeByCategory.bind(this);
+                this.getCategories = this.getCategories.bind(this);
             }
 
-            getRandomJokePromise(url) {
+            componentDidMount() {
+                this.getCategories();
+            }
+
+            makeRequest(params) {
+                const url = `https://api.chucknorris.io/jokes/${params}`;
                 return new Promise((resolve, reject) => {
                     const request = new XMLHttpRequest();
-
-                    this.setState({isLoadingJoke: true, joke: {}, errMess: null});
 
                     request.addEventListener('readystatechange', () => {
                         if (request.readyState === 4 && request.status === 200) {
                             const data = JSON.parse(request.responseText);
                             resolve(data);
                         } else if (request.readyState === 4) {
-                            console.log('failed');
-                            reject('error getting resource');
+                            reject('Unable to get resource');
                         }
                     });
 
@@ -114,24 +144,54 @@
                 });
             }
 
-            getRandomJoke(url) {
-                this.getRandomJokePromise(url).then( data => {
-                    // console.log('Promise resolved', data);
+            getRandomJoke() {
+                this.setState({isLoadingJoke: true, joke: null, errMess: null});
+                this.makeRequest('random').then( data => {
 
-                    const {icon_url: icon, value} = data;
+                    const { value } = data;
 
                     this.setState({
-                        joke: {
-                            icon,
-                            value
-                        },
+                        joke: value,
                         errMess: null,
                         isLoadingJoke: false
                     });
 
                 }).catch( data => {
-                    this.setState({errMess: "An error occured while trying to load the joke. Please check your internet connection and try again", isLoadingJoke: false, joke: {}});
-                    // console.log('Promise rejected.', data);
+                    this.setState({
+                        errMess: "An error occured while trying to load the joke. Please check your internet connection and try again", 
+                        isLoadingJoke: false,
+                        joke: null
+                    });
+                })
+            }
+
+            getCategories() {
+                this.makeRequest('categories').then( data => {
+                    this.setState({categories: data});
+                }).catch(data => {
+                    console.log('failed to get categories');
+                });
+            }
+
+
+            getJokeByCategory(category) {
+                this.setState({isLoadingJoke: true, joke: null, errMess: null});
+                this.makeRequest(`random?category=${category}`).then( data => {
+
+                    const { value } = data;
+
+                    this.setState({
+                        joke: value,
+                        errMess: null,
+                        isLoadingJoke: false
+                    });
+
+                }).catch( data => {
+                    this.setState({
+                        errMess: "An error occured while trying to load the joke. Please check your internet connection and try again", 
+                        isLoadingJoke: false, 
+                        joke: null
+                    });
                 })
             }
 
@@ -141,22 +201,20 @@
                         <div className="col-12 py-3">
                             <h1>Chuck Norris Joke Generator</h1>
                         </div>
-
                         <div className="col-12 mb-1">
-                            <button onClick={() => this.getRandomJoke('https://api.chucknorris.io/jokes/random')} className="btn btn-primary btn-lg">
-                                Generate Joke
+                            
+                            <RenderCategories categories_array={this.state.categories} getJoke={this.getJokeByCategory} />
+
+                            <button onClick={this.getRandomJoke} className="btn btn-primary">
+                                Get Random Joke
                             </button>
                         </div>
-
                         <div className="col-12 py-2">
                             <hr />
                         </div>
-                        
-
                         <div className="col-12 offset-md-3 col-md-6">
                             <RenderJokes joke={this.state.joke} isLoadingJoke={this.state.isLoadingJoke} errMess={this.state.errMess} />
-                        </div>
-                        
+                        </div>                        
                     </React.Fragment>
                 );
             }
