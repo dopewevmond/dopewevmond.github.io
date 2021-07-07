@@ -1,76 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.14.0/css/all.css">
-    <style>
-        body, html {
-            padding: 0;
-            margin: 0;
-            font-family: 'Noto Sans', sans-serif;
-            font-size: 14px;
-        }
-        #wrapper {
-            width: 90%;
-            margin: 0 auto;
-        }
-        ul {
-            padding-left: 0;
-            list-style-type: none;
-        }
-        li a {
-            color: rgb(48, 48, 180);
-            font-weight: 400;
-            text-decoration: none;
-            font-size: 1.5rem;
-           
-        }  
-        li {
-            margin: 20px 0;
-            padding: 5px 0;
-            border-bottom: 2px solid #333;
-        }
-        footer {
-            font-size: small;
-            text-align: center;
-        }
-        
-        
-        @media (min-width: 1440px) {
-            #wrapper {
-                width: 50%;
-            }
-        }
-    </style>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | IP Address Tracker</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="wrapper">
-        <h1>16 Projects By Front-End Mentor</h1>
-        <p><i class="fa fa-info-circle"></i> Source code for all projects available <a href="https://github.com/dopewevmond/dopewevmond.github.io">here</a></p>
-        <hr>
-        <ul>
-            <li><a href="single-price-grid-component-master/index.html">Single Grid Price Component</a></li>
-            <li><a href="four-card-feature-section-master/index.html">Four-Card Feature Section</a><br></li>
-            <li><a href="huddle-landing-page-with-single-introductory-section-master/index.html">Huddle Landing page</a><br></li>
-            <li><a href="base-apparel-coming-soon-master/index.html">Base Apparel Coming Soon Page</a></li>
-            <li><a href="intro-component-with-signup-form-master/index.html">Single Component Signup Page</a></li>
-            <li><a href="pricing-component-with-toggle-master/index.html">Pricing Component with toggle</a></li>
-            <li><a href="insure-landing-page-master/index.html">Insure Landing Page</a></li>
-            <li><a href="fylo-dark-theme-landing-page-master/index.html">Fylo Landing Page</a></li>
-            <li><a href="manage-landing-page-master/index.html">Manage Landing Page</a></li>
-            <li><a href="url-shortening-api-master/index.html">Url Shortening API</a></li>
-            <li><a href="react-project/index.html">Chuck Norris API</a></li>
-        </ul>
+    <div class="p__bg">
+        <h1 class="text-center py-4 text-white">IP Address Tracker</h1>
+        <div class="mx-auto d-block d-flex p__input-container">
+            <input type="text" class="p__input" placeholder="Search for any IP Address or domain">
+            <!-- <input type="submit" value=">"> -->
+            <button type="submit" class="p__button"> > </button>
+        </div>
 
-        <footer>
-            <p>Edmund Wevamwo &copy; 2021</p>
-        </footer>
+        <div class="p__absolute container-fluid">
+            <div class="p__container mt-4 bg-white text-center p__custom-box">
+                <div class="py-4">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-3 p__right-border my-lg-4">
+                            <h3>IP ADDRESS</h3>
+                            <p>192.212.174.101</p>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3 p__right-border my-lg-4">
+                            <h3>LOCATION</h3>
+                            <p>Brooklyn, NY <br>10001</p>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3 p__right-border my-lg-4">
+                            <h3>TIMEZONE</h3>
+                            <p>192.212.174.101</p>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3 my-lg-4">
+                            <h3>ISP</h3>
+                            <p>SpaceX Starlink</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <div class="p__map"></div>
 </body>
 </html>
