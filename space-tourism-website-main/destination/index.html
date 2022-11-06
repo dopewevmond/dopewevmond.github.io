@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Space tourism website</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="./destination.css">
+</head>
+<body>
+  <div class="container-md">
+    <div>
+      <div class="nav-toggler">
+        <img class="nav-toggler-icon" src="../assets/shared/icon-hamburger.svg" alt="">
+      </div>
+    </div>
+    <nav class="navbar">
+      <div class="logo">
+        <div class="horiz-line-lg"></div>
+        <img src="../assets/shared/logo.svg" alt="logo">
+      </div>
+      <div class="nav__items nav-right z-1">
+        <ul class="nav-links font-bc">
+          <li><a href="../home"><span class="nums">00 </span>HOME</a></li>
+          <li><a href="#" class="active"><span class="nums">01 </span>DESTINATION</a></li>
+          <li><a href="../crew"><span class="nums">02 </span>CREW</a></li>
+          <li><a href="../technology"><span class="nums">03 </span>TECHNOLOGY</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container">
+    <p class="page-heading f-16 ls-27 font-bc text-center-sm mb-30"><span class="nums"> 01 </span>PICK YOUR DESTINATION </p>
+
+    <div class="col-lg-row">
+      <div class="main-image mb-20">
+        <img src="../assets/destination/image-moon.png" class="js-current-img img-responsive position-img" alt="image of the moon">
+      </div>
+      <div class="main-content">
+        <ul class="destinations font-bc ls-27 mb-30">
+          <li class="moon dest-btn active-dest" data-id="0">
+            <span href="#" class="">MOON</span>
+          </li>
+          <li class="mars dest-btn" data-id="1">
+            <span href="#" class="">MARS</span>
+          </li>
+          <li class="europa dest-btn" data-id="2">
+            <span href="#" class="">EUROPA</span>
+          </li>
+          <li class="titan dest-btn" data-id="3">
+            <span href="#" class="">TITAN</span>
+          </li>
+        </ul>
+
+        <div class="selected-destination">
+          <div class="js-destination text-heading text-center-sm-md font-bf">MOON</div>
+
+          <p class="js-destination-description text-center-sm-md tab-reduce-w font-b mb-30 f-15 color-paleblue lh-25">See our planet as you&apos;ve never seen it before. A perfect relaxing trip away to help 
+            regain perspective and come back refreshed. While you&apos;re there, take in some history 
+            by visiting the Luna 2 and Apollo 11 landing sites.
+          </p>
+
+          <hr />
+
+          <div class="facts text-center-sm-md tab-reduce-w mt-30 mb-30">
+            <div class="ad mb-10">
+              <span class="font-bc f-14">AVERAGE DISTANCE</span>
+              <div class="js-avg-distance font-bf f-28 color-paleblue">384,000 KM</div>
+            </div>
+            <div class="tt">
+              <span class="font-bc f-14">EST. TRAVEL TIME</span>
+              <div class="js-travel-time font-bf f-28 color-paleblue">3 DAYS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../script.js"></script>
+  <script src="./destination.js"></script>
+</body>
+</html>

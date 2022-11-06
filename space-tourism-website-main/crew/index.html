@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Space tourism website</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="./crew.css">
+</head>
+<body>
+  <div class="container-md">
+    <div>
+      <div class="nav-toggler">
+        <img class="nav-toggler-icon" src="../assets/shared/icon-hamburger.svg" alt="">
+      </div>
+    </div>
+    <nav class="navbar">
+      <div class="logo">
+        <div class="horiz-line-lg"></div>
+        <img src="../assets/shared/logo.svg" alt="logo">
+      </div>
+      <div class="nav__items nav-right z-1">
+        <ul class="nav-links font-bc">
+          <li><a href="../home"><span class="nums">00 </span>HOME</a></li>
+          <li><a href="../destination"><span class="nums">01 </span>DESTINATION</a></li>
+          <li><a href="#" class="active"><span class="nums">02 </span>CREW</a></li>
+          <li><a href="../technology"><span class="nums">03 </span>TECHNOLOGY</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container">
+    <p class="page-heading f-16 ls-27 font-bc text-center-sm mb-30"><span class="nums"> 02 </span>MEET YOUR CREW </p>
+    
+    <div class="flex-chameleon">
+      <div class="img-container">
+        <div class="fix-aspect-ratio-mobile">
+          <img src="../assets/crew/image-douglas-hurley.png" alt="picture of astronaut" class="js-img position-img img-responsive">
+        </div>
+        <hr class="mt-0 border-grey mb-20 hide-md pos-absolute pos-absolute-bottom" />  
+    </div>
+
+    <div class="carousel">
+      <!-- the javascript automatically generates the elements here -->
+      <div class="carousel-button carousel-current" data-crew="0">
+        <div class="circle"></div>
+      </div>
+  
+      <div class="carousel-button" data-crew="1">
+        <div class="circle"></div>
+      </div>
+  
+      <div class="carousel-button" data-crew="2">
+        <div class="circle"></div>
+      </div>
+  
+      <div class="carousel-button" data-crew="3">
+        <div class="circle"></div>
+      </div>
+    </div><!-- end of carousel -->
+
+    <div class="lg-mt">
+        <!-- maintain a constant height on desktops to -->
+        <!-- prevent carouse buttons from shifting -->
+        <div class="const-height">
+          <div class="js-title font-bf color-grey text-center-sm-md f-18 mb-5">COMMANDER</div>
+          <div class="js-name text-center-sm-md f-24 font-bf mb-20">DOUGLAS HURLEY</div>
+          <p class="js-bio lh-25 font-b paragraph text-center-sm-md pad-bottom">
+            Douglas Gerald Hurley is an American engineer, former Marine Corps pilot 
+            and former NASA astronaut. He launched into space for the third time as 
+            commander of Crew Dragon Demo-2.
+          </p>
+        </div>
+        
+
+        <div class="carousel carousel-lg">
+          <!-- the javascript automatically generates the elements here -->
+          <div class="carousel-button-lg carousel-current-lg" data-crew="0">
+            <div class="circle"></div>
+          </div>
+      
+          <div class="carousel-button-lg" data-crew="1">
+            <div class="circle"></div>
+          </div>
+      
+          <div class="carousel-button-lg" data-crew="2">
+            <div class="circle"></div>
+          </div>
+      
+          <div class="carousel-button-lg" data-crew="3">
+            <div class="circle"></div>
+          </div>
+        </div><!-- end of carousel -->
+    </div>
+  </div> <!--end of flex-chameleon -->
+</div> 
+
+
+  <script src="../script.js"></script>
+  <script src="./crew.js"></script>
+</body>
+</html>

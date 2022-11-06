@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Space tourism website</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="./technology.css">
+</head>
+<body>
+  <div class="container-md">
+    <div>
+      <div class="nav-toggler">
+        <img class="nav-toggler-icon" src="../assets/shared/icon-hamburger.svg" alt="">
+      </div>
+    </div>
+    <nav class="navbar">
+      <div class="logo">
+        <div class="horiz-line-lg"></div>
+        <img src="../assets/shared/logo.svg" alt="logo">
+      </div>
+      <div class="nav__items nav-right z-1">
+        <ul class="nav-links font-bc">
+          <li><a href="../home"><span class="nums">00 </span>HOME</a></li>
+          <li><a href="../destination"><span class="nums">01 </span>DESTINATION</a></li>
+          <li><a href="../crew"><span class="nums">02 </span>CREW</a></li>
+          <li><a href="#" class="active"><span class="nums">03 </span>TECHNOLOGY</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container">
+    <p class="page-heading f-16 ls-27 font-bc text-center-sm mb-30"><span class="nums"> 03 </span>SPACE LAUNCH 101</p>
+  </div>
+
+  <div class="fluid-container-lg">
+    <div class="fl-box">
+      <div class="img-div">
+        <picture class="js-curr-tech-picture">
+          <source media="(min-width: 1024px)" srcset="../assets/technology/image-launch-vehicle-portrait.jpg">
+          <img class="img-responsive position-img" src="../assets/technology/image-launch-vehicle-landscape.jpg" alt="space vehicle">
+        </picture>
+      </div>
+      <div class="description-div">
+        <ul class="numbers font-bf f-20-constant">
+          <li><a class="active-tech js-btn-tech" href="#" data-id="0">1</a></li>
+          <li><a class="js-btn-tech" href="#" data-id="1">2</a></li>
+          <li><a class="js-btn-tech" href="#" data-id="2">3</a></li>
+        </ul>
+        <div class="descriptive-text container text-center-sm-md">
+          <div class="font-bc ls-27 f-16-constant mb-10">THE TERMINOLOGY...</div>
+          <div class="js-curr-tech-name f-24 f-45-lg font-bf mb-20">LAUNCH VEHICLE</div>
+          <p class="js-curr-tech-desc font-b lh-25 color-paleblue">
+            A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a 
+            payload from Earth's surface to space, usually to Earth orbit or beyond. Our 
+            WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, 
+            it's quite an awe-inspiring sight on the launch pad!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../script.js"></script>
+  <script src="./technology.js"></script>
+</body>
+</html>

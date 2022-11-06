@@ -1,0 +1,116 @@
+body {
+    background-image: url("../assets/destination/background-destination-mobile.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.main-image, .main-content {
+    width: 100%;
+}
+.main-image {
+    /* background-color: green; */
+    height: 26em;
+    position: relative;
+}
+
+/* .main-content {
+    background-color: red;
+} */
+.destinations {
+    display: flex;
+    padding: 0 20% 0;
+    justify-content: space-between;
+}
+.destinations li {
+    color: var(--paleblue);
+    padding-bottom: 10px;
+}
+.destinations li:hover {
+    border-bottom: 0.5px solid white;
+    cursor: pointer;
+}
+.destinations li.active-dest {
+    border-bottom: 1.5px solid white;
+    color: white;
+}
+.text-heading {
+    font-size: 56px;
+}
+.f-15 {
+    font-size: 15px;
+}
+.f-14 {
+    font-size: 14px;
+}
+.f-28 {
+    font-size: 28px;
+}
+.mt-30 {
+    margin-top: 30px;
+}
+.mb-30 {
+    margin-bottom: 30px;
+}
+.selected-destination, .js-current-img {
+    transition: opacity 0.3s ease-in-out;
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        background-image: url("../assets/destination/background-destination-tablet.jpg");
+    }
+    .main-image {
+        height: 45em;
+    }
+    .text-heading {
+        font-size: 80px;
+    }
+    .tab-reduce-w {
+        width: 65%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .f-15 {
+        font-size: 16px;
+    }
+    .facts {
+        display: flex;
+        justify-content: space-between;
+    }
+    .facts > * {
+        flex-basis: 48%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    body {
+        background-image: url("../assets/destination/background-destination-desktop.jpg");
+    }
+    .col-lg-row {
+        padding-left: 9%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; 
+    }
+    .main-image, .main-content {
+        flex-basis: 48%;
+    }   
+    .main-image {
+        height: auto;
+    }
+    .destinations {
+        padding: 30px 0 0 0;
+        width: 65%;
+        max-width: 400px;
+    }
+    .text-heading {
+        font-size: 100px;
+    }
+    .f-15 {
+        font-size: 18px;
+    }
+    .tab-reduce-w {
+        width: 100%;
+        margin-left: 5px;
+        /* max-width: 400px; */
+    }
+}

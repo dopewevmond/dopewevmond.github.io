@@ -1,0 +1,130 @@
+body {
+    background-image: url("../assets/crew/background-crew-mobile.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.pos-absolute {
+    position: absolute;
+}
+.pos-absolute-bottom {
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+}
+.fix-aspect-ratio-mobile {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.img-container {
+    position: relative;
+    height: 20em;
+    width: 100%;
+    /* background-color: green; */
+}
+/* .lg-mt {
+    background-color: red;
+} */
+.flex-chameleon {
+    display: flex;
+    flex-direction: column;
+}
+.carousel {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100px;
+    justify-content: space-between;
+    margin: 10px auto;
+}
+.carousel-lg {
+    display: none;
+}
+.carousel-button {
+    height: 15px;
+    width: 15px;
+    display: flex;
+    /* background-color: red; */
+    justify-content: center;
+    cursor: pointer;
+}
+.carousel-button-lg {
+    display: none;
+}
+.circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #606060;
+    align-self: center;
+}
+.carousel-current .circle, .carousel-current-lg .circle {
+    background-color: white;
+}
+.lg-mt, .js-img {
+    transition: opacity 0.3s ease-in-out;
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        background-image: url("../assets/crew/background-crew-tablet.jpg");
+    }
+    .flex-chameleon {
+        flex-direction: column-reverse;
+    }
+    .img-container {
+        height: 45em;
+    }
+    .lg-mt {
+        height: 15em;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    body {
+        background-image: url("../assets/crew/background-crew-desktop.jpg");
+    }
+    .paragraph {
+        width: auto;
+        height: auto;
+    }
+    .flex-chameleon {
+        flex-direction: row-reverse;
+    }
+    .flex-chameleon > * {
+        flex-basis: 50%;
+    }
+    .lg-mt {
+        margin-top: 2.5em;
+        height: auto;
+    }
+    .const-height {
+        min-height: 19em;
+    }
+    .flex-chameleon {
+        padding-left: 9%;
+    }
+    .carousel {
+        display: none;
+    }
+    .carousel-lg {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100px;
+        justify-content: space-between;
+        margin: 10px 0;
+    }
+    .carousel-button-lg {
+        height: 15px;
+        width: 15px;
+        display: flex;
+        /* background-color: red; */
+        justify-content: center;
+        cursor: pointer;
+    }
+    .img-container {
+        min-height: 30em;
+        max-height: 1vh;
+    }
+}
