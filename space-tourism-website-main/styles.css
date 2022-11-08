@@ -107,7 +107,7 @@ body {
     min-height: calc(100vh - var(--navbarHeight));
     background-color: #2f344c42;
     backdrop-filter: blur(10px);
-    transition: width 0.1s linear;
+/*     transition: width 0.1s linear; */
 }
 .nav-open{
     width: 75vw;
