@@ -1,0 +1,154 @@
+header.header {
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+header.header nav {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* hide the checkbox */
+#js-toggle-nav {
+  display: none;
+}
+
+#js-toggle-nav+label {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  padding: 8px;
+}
+
+.hamburger-button {
+  user-select: none;
+  width: 1.5rem;
+  height: 1rem;
+  cursor: pointer;
+  position: relative;
+}
+.hamburger-button > * {
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  background-color: #404040;
+}
+
+.hamburger-button .top {
+  top: 0;
+}
+.hamburger-button .middle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.hamburger-button .bottom {
+  top: 100%;
+  transform: translateY(-100%);
+}
+
+div:has(#js-toggle-nav:checked) .hamburger-button .top {
+ top: 50%;
+ transform: rotate(135deg);
+}
+div:has(#js-toggle-nav:checked) .hamburger-button .middle {
+ display: none;
+}
+div:has(#js-toggle-nav:checked) .hamburger-button .bottom {
+ top: 50%;
+ transform: rotate(45deg);
+}
+
+header nav .navbar-links {
+  /* padding: 0; */
+  margin: 0 auto;
+  list-style: none;
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  max-width: -webkit-calc(720px - (30px));
+  max-width: calc(720px - (30px));
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+header nav .navbar-links li {
+  text-align: center;
+}
+header nav .navbar-links li a {
+  padding: 1rem 0;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+header nav .navbar-links li a.active {
+  color: black;
+}
+/* the navbar links should only show when the checkbox is checked */
+div:has(#js-toggle-nav:checked) + ul.navbar-links {
+  max-height: 600px;
+}
+.homepage-btn {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background-color: #76ABAE;
+  border-radius: 50%;
+  color: inherit;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  body:has(#js-toggle-nav:checked) {
+    overflow: hidden;
+  }
+  div.backdrop:has(+header #js-toggle-nav:checked) {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+  }
+}
+@media screen and (min-width: 768px) {
+  header.header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header nav .navbar-links {
+    max-height: none;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+
+    max-width: none;
+    padding: 0;
+  }
+  #js-toggle-nav+label {
+    display: none;
+  }
+  header nav .navbar-links li a {
+    padding: 0;
+    display: block;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body header nav .navbar-links li a.active {
+    color: white;
+  }
+  .hamburger-button > * {
+    background-color: white;
+  }
+}

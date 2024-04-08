@@ -1,0 +1,68 @@
+---
+import "../styles/index.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+const allBlogPosts = await getCollection("posts");
+import projects from "../../projects.json";
+import ProjectCard from "../components/ProjectCard.astro";
+
+const dateOptions: object = {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+};
+---
+
+<BaseLayout pageTitle="Home">
+  <div class="wrapper">
+    <div class="page-header about-section">
+      <div class="avatar"></div>
+      <h2>Edmund</h2>
+      <p style="line-height: 150%;">
+        I am a software developer with about 1.5 years of experience. I&apos;m
+        proficient in full stack web development using Javascript (React, Next,
+        Vue, NodeJS runtime, Express) and Python (Flask).
+      </p>
+      <p style="line-height: 150%;">
+        In my current role, I do a bit of data engineering and analysis where I
+        setup systems to collect, validate, prepare, analyze and visualize data
+        for business insights using tools like Airbyte, SQL, Power Automate, and AWS
+        (Redshift, Lambda, S3, Transfer Family, EC2, etc).
+      </p>
+      <p style="line-height: 150%;">Serial learner. Human.</p>
+    </div>
+
+    <div class="index-page-other-content">
+      <div style="margin-bottom: 5rem;">
+        <h3>Recent posts</h3>
+        <ul class="blog-posts-list">
+          {
+            allBlogPosts
+              .sort(
+                (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+              )
+              .slice(0, 5)
+              .map((post) => (
+                <li>
+                  <span class="blog-post-date">
+                    {new Date(post.data.pubDate).toLocaleDateString(
+                      "en-US",
+                      dateOptions
+                    )}
+                  </span>
+                  <a href={`/posts/${post.slug}`}>{post.data.title}</a>
+                </li>
+              ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h3>Some Projects I&apos;ve worked on</h3>
+        <div class="project-container">
+          {projects.map((project) => <ProjectCard {...project} />)}
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

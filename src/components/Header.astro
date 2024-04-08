@@ -1,0 +1,39 @@
+---
+import "../styles/navbar.css";
+const pathname = new URL(Astro.request.url).pathname
+---
+<div class="backdrop transition"></div>
+<header class="header">
+  <nav class="wrapper">
+    <div class="relative">
+      <a href="/" class="homepage-btn transition">
+      </a>
+
+      <div>
+        <input type="checkbox" id="js-toggle-nav" />
+        <label for="js-toggle-nav">
+          <div class="hamburger-button">
+            <div class="top transition"></div>
+            <div class="middle transition"></div>
+            <div class="bottom transition"></div>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <ul class="navbar-links transition">
+      <li>
+        <a href="/" class={pathname === '/' ? 'active': ''}>Home</a>
+      </li>
+      <li>
+        <a href="/projects" class={pathname === '/projects' ? 'active': ''}>Projects</a>
+      </li>
+      <li>
+        <a href="/archive" class={pathname === '/archive' ? 'active': ''}>Archive</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="wrapper">
+    <div style="margin: 0;" class="show-only-on-large custom-hr"></div>
+  </div>
+</header>

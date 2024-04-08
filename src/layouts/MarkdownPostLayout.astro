@@ -1,0 +1,46 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import "../styles/markdownpost.css";
+
+const dateOptions: object = {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+
+const {
+  frontMatter: {
+    title,
+    pubDate,
+    description,
+    author,
+    image: { url, alt },
+    tags,
+  },
+} = Astro.props;
+
+const formattedPublishDate = new Date(pubDate).toLocaleDateString(
+  "en-US",
+  dateOptions
+);
+---
+
+<BaseLayout pageTitle={title}>
+  <div class="wrapper blog-page">
+    <div class="blog-post-frontmatter">
+      <h1 class="title">{title}</h1>
+      <div>
+        <span>{formattedPublishDate}</span>
+      </div>
+    </div>
+    <slot />
+    <div class="blog-page-hr"></div>
+    <div>
+      <!-- <p class="share-blog-post">
+        You can share this post on
+        <a href={`http://twitter.com/share?text=${title}`} target="_blank" rel="noopener noreferrer">X</a>
+      </p> -->
+    </div>
+  </div>
+  <script src="../scripts/copysnippet.js"></script>
+</BaseLayout>

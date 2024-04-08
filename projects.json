@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Pepe's Game",
+    "description": [
+      "A web-based crypto betting game based on meme character Pepe. Converted Figma designs and workflows into components and methods.",
+      "Interfaced with blockchain libraries like wagmi and ethersjs and API to provide a smooth gaming experience for users."
+    ],
+    "img": "/pepe.png",
+    "code": null,
+    "live": "https://app.pepesgame.com"
+  },
+  {
+    "name": "Cryptosat Simulator",
+    "description": [
+      "Rebuilt a React application that simulates control of a live satellite via the Cryptosat API to match new design.",
+      "Modified other dependent projects, such as the jsconsole library, to extend theming and functionality."
+    ],
+    "img": "/cryptosim.png",
+    "code": null,
+    "live": "https://simulator.cryptosat.io"
+  },
+  {
+    "name": "Unprototyped Website",
+    "description": [
+      "Implemented website for software development company Unprototyped from Figma designs.",
+      "Rewrote code to match new design. Integrated with Slack workspace for notifications."
+    ],
+    "img": "/unprototyped.png",
+    "code": null,
+    "live": "https://unprototyped.com"
+  },
+  {
+    "name": "DimPo Pred",
+    "description": [
+      "Web application to predict and classify compounds as human alpha glucosidase activators/inhibitors based on chemical structure (SMILES).",
+      "Collected data, trained ML models using different algorithms and deployed in a Flask web application for compound prediction."
+    ],
+    "img": "/dimpo.png",
+    "code": "https://github.com/dopewevmond/fyp-deploy",
+    "live": null
+  }
+]

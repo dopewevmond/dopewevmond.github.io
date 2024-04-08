@@ -1,0 +1,67 @@
+---
+import "../styles/archive.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+const allBlogPosts = await getCollection("posts");
+
+const dateOptions: object = {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+};
+const dateOptionsWithoutYear: object = {
+  month: "short",
+  day: "numeric",
+};
+const groupedByDate = {} as any;
+
+for (let i = 0; i < allBlogPosts.length; i++) {
+  const year = allBlogPosts[i].data.pubDate.getUTCFullYear();
+  if (groupedByDate[year]) {
+    groupedByDate[year] = [...groupedByDate[year], allBlogPosts[i]];
+  } else {
+    groupedByDate[year] = [allBlogPosts[i]];
+  }
+}
+---
+
+<BaseLayout pageTitle="Archive">
+  <div class="wrapper">
+    <div class="page-header">
+      <h2>Archive</h2>
+    </div>
+
+    <div class="projects-container index-page-other-content">
+      {
+        Object.keys(groupedByDate)
+          .sort((a, b) => parseInt(b) - parseInt(a))
+          .map((year) => (
+            <div>
+              <h3>{year}</h3>
+              <ul class="blog-posts-list">
+                {groupedByDate[year]
+                  .sort(
+                    (c: any, d: any) =>
+                      d.data.pubDate.getTime() - c.data.pubDate.getTime()
+                  )
+                  .map((post: any) => (
+                    <li>
+                      <span class="blog-post-date">
+                        {new Date(post.data.pubDate).toLocaleDateString(
+                          "en-US",
+                          new Date().getUTCFullYear() ===
+                            post.data.pubDate.getUTCFullYear()
+                            ? dateOptionsWithoutYear
+                            : dateOptions
+                        )}
+                      </span>
+                      <a href={`/posts/${post.slug}`}>{post.data.title}</a>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          ))
+      }
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,11 @@
+.projects-container > div {
+  margin-bottom: 3rem;
+}
+
+.projects-container h3 {
+  margin: 0;
+}
+
+.index-page-other-content {
+  margin-bottom: 20vh;
+}

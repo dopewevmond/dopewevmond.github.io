@@ -1,0 +1,30 @@
+---
+const { name, img, description, live, code } = Astro.props;
+import newTabIcon from "../../public/svgs/new-tab-icon.svg?raw";
+
+---
+<div class="project-card">
+  <div class="image-container">
+    <img src={img} />
+  </div>
+  <div class="content">
+    <h4>{name}</h4>
+    {description.map((d: string) => (
+      <p>{d}</p>
+    ))}
+    <div style="display: flex; gap: 8px">
+      {code && <a href={code} target="_blank" rel="noopener noreferrer">
+        <span>Code</span>
+        <span class="new-tab-icon">
+          <Fragment set:html={newTabIcon} />
+        </span>
+      </a>}
+      {live && <a href={live} target="_blank" rel="noopener noreferrer">
+        <span>View Live</span>
+        <span class="new-tab-icon">
+          <Fragment set:html={newTabIcon} />
+        </span>
+      </a>}
+    </div>
+  </div>
+</div>

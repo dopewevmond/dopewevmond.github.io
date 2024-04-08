@@ -1,0 +1,13 @@
+---
+// grab a reference to the programming language specified in the {.mdx, .md} files
+const { "data-language": lang, ...rest } = Astro.props;
+import '../styles/code.css'
+---
+ 
+<div class="custom-code-box">
+  <figcaption>
+    <span class="custom-code__lang">{lang}</span>
+    <button class="custom-code__copy">Copy</button>
+  </figcaption>
+  <pre {...rest}><slot /></pre>
+</div>

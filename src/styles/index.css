@@ -1,0 +1,18 @@
+.about-section .avatar {
+  width: 5rem;
+  height: 5rem;
+  background-color: #76ABAE;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.index-page-other-content {
+  margin-bottom: 15vh;
+}
+
+
+
+@media screen and (min-width: 768px) {
+  
+}

@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import projects from "../../projects.json";
+import ProjectCard from "../components/ProjectCard.astro";
+---
+
+<BaseLayout pageTitle="Projects">
+  <div class="wrapper">
+    <div class="page-header">
+      <h2>Projects</h2>
+      <p>Some projects I&apos;ve worked on. </p>
+    </div>
+
+    <div class="page-content-margin-bottom">
+      <div class="project-container">
+        {projects.map((project) => <ProjectCard {...project} />)}
+      </div>
+    </div>
+  </div>
+</BaseLayout>
