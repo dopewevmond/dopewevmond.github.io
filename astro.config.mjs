@@ -28,5 +28,6 @@ export default defineConfig({
     shikiConfig: {
       theme
     }
-  }
+  },
+  site: 'https://dopewevmond.github.io'
 });
