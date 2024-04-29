@@ -2,7 +2,7 @@
 import "../styles/archive.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-const allBlogPosts = await getCollection("posts");
+const allBlogPosts = await getCollection("posts") as any;
 
 const dateOptions: object = {
   year: "numeric",
