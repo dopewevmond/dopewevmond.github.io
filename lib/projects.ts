@@ -2,7 +2,7 @@ export const featuredProjects = [
   {
     title: "Keymap AI Database Schema Generator",
     description: "Generate database schemas in seconds by prompting AI",
-    imageSrc: "./keymap-screenshot.png",
+    imageSrc: "/keymap-screenshot.png",
     technologies: [
       "openai api",
       "nextjs",
@@ -16,7 +16,7 @@ export const featuredProjects = [
   {
     title: "Chatty Realtime Chat App",
     description: "Real time chat with users powered by websockets",
-    imageSrc: "./chatty-screenshot.png",
+    imageSrc: "/chatty-screenshot.png",
     technologies: [
       "nextjs",
       "reactjs",
@@ -33,7 +33,7 @@ export const featuredProjects = [
   },
   {
     title: "Chuck Norris Jokes Generator",
-    imageSrc: "./chuck-norris-screenshot.png",
+    imageSrc: "/chuck-norris-screenshot.png",
     description:
       "When Chuck Norris tells a joke, even the APIs laugh. Warning: May cause uncontrollable giggling!",
     technologies: ["vue", "vue-router", "chuck-norris-api"],

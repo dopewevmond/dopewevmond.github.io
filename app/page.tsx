@@ -41,9 +41,8 @@ export default async function Home() {
           </div>
           <div className="relative aspect-square flex items-center justify-center">
             <div className="absolute inset-0 bg-gradient-to-br from-black/5 to-transparent rounded-lg transform rotate-3"></div>
-            {}
             <img
-              src="./ghibli-avatar.png"
+              src="/ghibli-avatar.png"
               alt=""
               className="select-none drag-none grayscale-[50%] w-full max-w-[32rem] aspect-square rounded-lg object-cover transform -rotate-3 transition-transform hover:rotate-0"
             />
